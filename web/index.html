@@ -17,9 +17,10 @@
 
 <div class="container">
 
-	<div class="row">
-		<div class="row__col row__col_sm-6 panel" data-block="panel">
-			<button type="button" class="panel__btn" data-elem="panel__btn">Color background</button>
+	<div class="row" data-row="true">
+		<div class="row__col row__col_sm-6 panel" data-panel="on" data-row="__col_sm-6">
+			<button type="button" class="panel__btn" data-panel="__btn">Color background</button>
+			<span class="panel__hint panel__hint_sm" data-panel="__hint __hint_sm">Hint</span>
 		</div>
 		<div class="row__col row__col_sm-6">
 			Start project from <a href="//jekins.ru">jekins.ru</a>
@@ -27,7 +28,6 @@
 	</div>
 
 </div>
-
 
 <!-- scripts -->
 <script data-main="js/config" src="lib/require/require.js"></script>
