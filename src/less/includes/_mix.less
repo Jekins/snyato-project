@@ -1,0 +1,37 @@
+/* mixins **********************/
+.clearfix() {
+    &:after {
+        content: '';
+        display: block;
+        width: 100%;
+        clear: both;
+    }
+}
+
+.absolute() {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: block;
+}
+
+.last() {
+    > *:last-child {
+        margin-bottom: 0 !important;
+    }
+}
+
+.placeholder(@color) {
+  &::-moz-placeholder {
+    color: @color;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: @color;
+  }
+  &::-webkit-input-placeholder {
+    color: @color;
+  }
+}

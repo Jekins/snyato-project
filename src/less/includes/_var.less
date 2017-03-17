@@ -1,0 +1,122 @@
+/* varibles ***********************/
+@c-white: #ffffff;
+@c-black: #000000;
+@c-dark: #333333;
+@c-red: #F44336;
+@c-red-dark: darken(@c-red, 15%);
+@c-red-light: lighten(@c-red, 15%);
+@c-green: #4CAF50;
+@c-green-dark: darken(@c-green, 15%);
+@c-green-light: lighten(@c-green, 15%);
+@c-blue: #2196F3;
+@c-blue-dark: darken(@c-blue, 15%);
+@c-blue-light: lighten(@c-blue, 15%);
+@c-orange: #FF9800;
+@c-orange-dark: darken(@c-orange, 15%);
+@c-orange-light: lighten(@c-orange, 15%);
+@c-gray: #9E9E9E;
+@c-gray-light: lighten(@c-gray, 15%);
+@c-gray-lighten: lighten(@c-gray, 25%);
+@c-gray-dark: darken(@c-gray, 15%);
+@c-gray-darken: darken(@c-gray, 25%);
+
+
+@c-base: @c-dark;
+@c-link: @c-blue;
+@c-danger: @c-red;
+@c-success: @c-green;
+@c-warning: @c-orange;
+@c-primary: @c-blue;
+@c-border: @c-gray-lighten;
+
+
+@block-base: 20px;
+@block-large: @block-base * 2;
+@block-very-large: @block-large * 2;
+@block-small: @block-base / 2;
+@block-very-small: @block-small / 2;
+
+
+@lh-base : 1.5;
+@lh-small : @lh-base - .2;
+@lh-very-small : @lh-small - .2;
+@lh-large : @lh-base + .2;
+@lh-very-large : @lh-large + .2;
+
+
+@fz-base : 16px;
+@fz-small : @fz-base - 2;
+@fz-very-small : @fz-small - 2;
+@fz-large : @fz-base + 2;
+@fz-very-large : @fz-large + 2;
+
+
+@h1-fz: 36px;
+@h2-fz: 30px;
+@h3-fz: 24px;
+@h4-fz: 18px;
+@h5-fz: 14px;
+@h6-fz: 12px;
+
+
+@h1-mb: @block-base;
+@h2-mb: @block-base;
+@h3-mb: @block-base;
+@h4-mb: @block-small;
+@h5-mb: @block-small;
+@h6-mb: @block-small;
+
+
+@ff-base: Arial, sans-serif;
+
+
+@radius-base: 6px;
+@radius-large: @radius-base + 2;
+@radius-very-large: @radius-large + 2;
+@radius-small: @radius-base - 2;
+@radius-very-small: @radius-small - 2;
+
+
+@body-bg: @c-white;
+@body-ff: @ff-base;
+@body-c: @c-base;
+@body-fz: @fz-base;
+@body-lh: @lh-base;
+@body-mw: 320px;
+
+
+@link-c: @c-link;
+@link-hover-c: darken(@c-link, 15%);
+
+
+@heading-ff: Arial, sans-serif;
+@heading-c: @c-base;
+@heading-fw: bold;
+@heading-lh: 1.2;
+
+
+@ib-height: 40px;
+
+
+@input-h: @ib-height;
+@input-p: (@ib-height / 2 - @fz-base / 2) (@ib-height / 1.5 - @fz-base / 1.5);
+@input-fz: @fz-base;
+@input-c: @c-base;
+@input-bg: @c-white;
+@input-border: 1px solid @c-border;
+@input-border-hover: @c-link;
+@input-placeholder-c: lighten(@input-c, 48%);
+@input-error-c: @c-danger;
+@input-radius: @radius-base;
+
+
+@hr-c: @c-border;
+
+
+@cont-padding: 20px;
+
+
+@screen-lg: 1200px;
+@screen-md: 992px;
+@screen-sm: 767px;
+@screen-xs: 500px;
