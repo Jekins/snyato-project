@@ -1,48 +1,4 @@
 define(function () {
-	// return function (b, e, m) {
-	// 	if (e) {
-	// 		if (m) {
-	// 			return '[data-mod="' + b + '__' + e + '_' + m +'"]';
-	// 		} else {
-	// 			return '[data-elem="' + b + '__' + e + '"]';
-	// 		}
-	// 	} else if (m) {
-	// 		return '[data-mod="' + b + '_' + m + '"]';
-	// 	} else {
-	// 		return '[data-block="' + b + '"]';
-	// 	}
-	// };
-
-
-	// return function (b) {
-	//
-	// 	var
-	// 		d = $('[data-' + b + ']').data(b);
-	//
-	// 	console.log(d);
-	// 	if (d === 'on') {
-	// 		console.log('!!!');
-	// 	} else {
-	// 	}
-	// };
-
-	// var f = {
-	// 	panel: 'panel',
-	// 	elem: [
-	// 		{
-	// 			btn: '__btn'
-	// 		},
-	// 		{
-	// 			hint: '__hint',
-	// 			mod: [
-	// 				{
-	// 					sm: '_sm'
-	// 				}
-	// 			]
-	// 		}
-	// 	]
-	// };
-
 	return {
 		addBlock: function (b) {
 			var
@@ -107,7 +63,7 @@ define(function () {
 
 			return '[data-' + b + '="' + this.block[b] + '"]';
 		},
-		findElem: function (e) {
+		getElem: function (e) {
 			var
 				en = '__' + e,
 				i;

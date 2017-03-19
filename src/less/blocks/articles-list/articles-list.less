@@ -1,0 +1,31 @@
+/* articles-list ***********************/
+.articles-list {
+	.clearfix;
+	.last;
+
+	&__item {
+		margin-bottom: @indent-large;
+
+		//mods
+		&_3 {
+			width: 25%;
+		}
+		&_4 {
+			width: 33.3333333%;
+		}
+	}
+
+	//mods
+	&_inline {
+		margin-left: -@cont-padding;
+		margin-right: -@cont-padding;
+		margin-top: -@cont-padding * 2;
+	}
+	&_inline &__item {
+		float: left;
+		padding-left: @cont-padding;
+		padding-right: @cont-padding;
+		padding-top: @cont-padding * 2;
+		margin-bottom: 0;
+	}
+}

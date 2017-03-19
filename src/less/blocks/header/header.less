@@ -1,0 +1,61 @@
+/* header ***********************/
+.header {
+	//var
+	@header-height: 133px;
+
+	padding-top: @indent-small;
+	padding-bottom: @indent-small;
+	height: @header-height;
+
+	&__inner {
+		.table(100%, middle);
+		table-layout: fixed;
+
+		> * {
+			padding-right: @indent-large;
+
+			&:last-child {
+				padding-right: 0;
+			}
+		}
+	}
+	&__logo {
+		width: 194px + @indent-large;
+	}
+	&__nav {
+		text-align: center;
+
+		> * {
+			display: inline-block;
+		}
+	}
+	&__search {
+		width: 35px;
+
+		&-opener {
+			display: block;
+			.btn-reset;
+
+			&:hover {
+				color: @c-primary !important;
+			}
+		}
+		&-icon {
+			font-size: 35px;
+			.animate;
+		}
+	}
+
+	//mods
+	&_article {
+		position: relative;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 3;
+		margin-bottom: -@header-height;
+	}
+	&_article &__search-opener {
+		color: @c-white;
+	}
+}

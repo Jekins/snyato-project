@@ -1,0 +1,29 @@
+/* btn ***********************/
+.btn {
+	display: inline-block;
+	padding: @indent-very-small @indent-very-small * 1.4;
+	font-size: @fz-base;
+	line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	touch-action: manipulation;
+	cursor: pointer;
+	user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	height: @ib-height;
+	.animate;
+
+	//mods
+	&_default {
+		.btn-color(transparent, @c-primary, @c-black, @c-black);
+	}
+	&_black {
+		.btn-color(@c-black, @c-black, @c-black, @c-white);
+		
+		&:hover {
+			color: @c-primary;
+		}
+	}
+}

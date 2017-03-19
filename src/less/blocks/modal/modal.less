@@ -1,0 +1,125 @@
+/* modal ***********************/
+.modal {
+	display: none;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1050;
+	-webkit-overflow-scrolling: touch;
+	outline: 0;
+
+	&_open {
+		overflow: hidden;
+	}
+	&_fade &__dialog {
+	}
+	&_in &__dialog {
+		transform: translate(0, 0);
+		opacity: 1;
+	}
+	&_open & {
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	&__dialog {
+		position: relative;
+		width: auto;
+		margin: 10px;
+		opacity: 0;
+		transform: translate(0, -15%);
+		.animate;
+	}
+	&__content {
+		position: relative;
+		background-color: #ffffff;
+		background-clip: padding-box;
+		outline: 0;
+	}
+	&__backdrop {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1040;
+		background-color: #f5f5f5;
+		.animate;
+	}
+	&__backdrop&_fade {
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+	&__backdrop&_in {
+		opacity: 0.8;
+		filter: alpha(opacity=80);
+	}
+	&__header {
+		padding: @indent-base;
+	}
+	&__close {
+		position: absolute;
+		top: @indent-very-small;
+		right: @indent-very-small;
+		.btn-reset;
+		z-index: 1;
+		.animate;
+
+		&:hover {
+			color: @c-primary;
+		}
+		&-icon {
+			font-size: 30px;
+			line-height: 1;
+		}
+	}
+	&__title {
+		margin: 0;
+		line-height: 1.42857143;
+	}
+	&__body {
+		position: relative;
+		padding: @indent-base;
+	}
+	&__footer {
+		padding: @indent-base;
+		text-align: right;
+	}
+	&-scrollbar-measure {
+		position: absolute;
+		top: -9999px;
+		width: 50px;
+		height: 50px;
+		overflow: scroll;
+	}
+	@media (min-width: @screen-sm) {
+		&__dialog {
+			width: @screen-sm;
+			margin: 0 auto;
+		}
+		&__content {
+		}
+		&__dialog_sm {
+			width: 100%;
+			margin: 0;
+		}
+	}
+	@media (min-width: @screen-md) {
+		&__dialog_lg {
+			width: @screen-md;
+		}
+	}
+	&__header:before,
+	&__header:after,
+	&__footer:before,
+	&__footer:after {
+		content: " ";
+		display: table;
+	}
+	&__header:after,
+	&__footer:after {
+		clear: both;
+	}
+}

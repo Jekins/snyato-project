@@ -1,0 +1,44 @@
+/* nav ***********************/
+.nav {
+	&__list {
+		.cols;
+	}
+	&__item {
+		> a {
+			display: block;
+			font-size: @fz-large;
+			padding: @indent-very-small @indent-very-small * 1.2;
+			border: 1px solid transparent;
+			line-height: 1;
+			text-decoration: none;
+			color: @c-base;
+
+			&:hover,
+			&:focus {
+				color: @c-primary;
+			}
+			&:hover {
+				color: @c-primary !important;
+			}
+		}
+		&_active {
+			> a {
+				border-color: @c-dark;
+
+				&:hover {
+					border-color: @c-primary !important;
+				}
+			}
+		}
+	}
+
+	//mods
+	&_white &__item {
+		> a {
+			color: @c-white;
+		}
+		&_active > a {
+			border-color: @c-white;
+		}
+	}
+}

@@ -1,0 +1,306 @@
+/* article-preview ***********************/
+.article-preview {
+	//var
+	@header-indent: @indent-base - @cont-padding;
+
+	&__header {
+		position: relative;
+		height: 425px;
+
+		&-link {
+			.absolute;
+			z-index: 1;
+
+			&,
+			&:hover,
+			&:focus {
+				text-decoration: none;
+				color: transparent;
+			}
+		}
+		&-container {
+			position: absolute;
+			bottom: @header-indent + @cont-padding;
+			left: @header-indent;
+			right: @header-indent;
+		}
+
+		//other
+		.container {
+			position: relative;
+			height: 100%;
+		}
+	}
+	&__img {
+		.bg-img;
+		margin-left: -@cont-padding;
+		margin-right: -@cont-padding;
+
+		&-inner {
+			&:after {
+				content: '';
+				display: block;
+				.absolute;
+				opacity: .8;
+				background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,1) 100%);
+				background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,1) 100%);
+				background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,1) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=0 );
+			}
+		}
+	}
+	&__inner {
+		.absolute;
+		z-index: 1;
+
+		&,
+		* {
+			color: @c-white;
+		}
+	}
+	&__info {
+		position: absolute;
+		top: @header-indent + @cont-padding;
+		left: @header-indent;
+		right: @header-indent;
+		.cols;
+
+		&-left {}
+		&-right {
+			float: right;
+		}
+		a {
+			text-decoration: none;
+		}
+	}
+	&__title {
+		position: absolute;
+		bottom: @header-indent + @cont-padding;
+		left: @header-indent;
+		right: @header-indent;
+		font-size: @h1-fz / 1.6;
+		font-weight: @fw-extra;
+		line-height: @heading-lh;
+
+		> * {
+			.h-reset;
+
+			a {
+				text-decoration: none;
+				display: block;
+			}
+		}
+	}
+	&__body {
+		margin-top: @indent-small + @indent-very-small;
+
+		article {
+			font-size: @fz-large;
+			line-height: @lh-large;
+		}
+	}
+	&__desc {
+		.last;
+	}
+	&__link-more {
+		margin-top: @indent-very-small;
+	}
+	&__label {
+		text-transform: uppercase;
+		margin-bottom: @indent-very-small;
+		line-height: 1;
+		font-size: @fz-small;
+	}
+	&__date {
+		font-weight: @fw-extra;
+		font-size: @h2-fz / 1.2;
+		line-height: 1;
+	}
+	&__time {
+		font-size: @fz-very-large;
+		line-height: 1;
+		font-weight: @fw-light;
+		margin-top: @indent-very-small / 2;
+	}
+	&__options {
+		//var
+		@x: 2.2;
+
+		.cols;
+		margin-left: -@cont-padding * @x;
+		margin-right: -@cont-padding * @x;
+
+		&-item {
+			padding-left: @cont-padding * @x;
+			padding-right: @cont-padding * @x;
+			//background-color: rgba(0,0,0,.3);
+			//padding-top: @cont-padding * @x / 2;
+			//padding-bottom: @cont-padding * @x / 2;
+		}
+		&-inner {
+			.cols;
+			margin-left: -@cont-padding / 2;
+			margin-right: -@cont-padding / 2;
+
+			> * {
+				padding-left: @cont-padding / 2;
+				padding-right: @cont-padding / 2;
+			}
+		}
+	}
+
+
+	//mods
+	&_video &__header {
+		height: 170px;
+	}
+	&_video &__img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&_video &__img-inner {
+		&:after {
+			background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,1) 100%);
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,1) 100%);
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+		}
+	}
+	&_video &__info {
+		top: auto;
+		left: @header-indent;
+		right: @header-indent;
+		bottom: @header-indent / 2;
+	}
+	&_video &__title {
+		position: static;
+		bottom: auto;
+		left: auto;
+		right: auto;
+		font-size: @h3-fz;
+		line-height: 1;
+	}
+	&_video &__body {
+		margin-top: @indent-small;
+		height: 88px;
+		overflow: hidden;
+	}
+	&_video &__desc {
+		color: @c-secondary;
+		font-size: @fz-small;
+		margin-top: @indent-very-small;
+	}
+
+	&_event &__header {
+		height: 170px;
+	}
+	&_event &__img {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&_event &__img-inner {
+		overflow: hidden;
+
+		&:after {
+			background-color: @c-black;
+			transform: skewX(-20deg);
+			right: 44%;
+			left: -44%;
+			opacity: .7;
+		}
+	}
+	&_event &__info {
+		top: @header-indent / 2;
+		left: @header-indent;
+		right: @header-indent;
+		bottom: @header-indent / 2;
+		padding-top: @indent-base - 7;
+
+		> * {
+			float: none;
+		}
+	}
+	&_event &__title {
+		position: static;
+		bottom: auto;
+		left: auto;
+		right: auto;
+		font-size: @h3-fz;
+		line-height: 1;
+	}
+	&_event &__body {
+		margin-top: @indent-small;
+		height: 124px;
+		overflow: hidden;
+	}
+	&_event &__desc {
+		color: @c-secondary;
+		font-size: @fz-small;
+		margin-top: @indent-very-small;
+	}
+
+	&_article &__img {
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
+
+		&:after,
+		&:before {
+		}
+	}
+	&_article &__img-inner {
+		&:after {
+			background: -moz-linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(0,0,0,1) 100%);
+			background: -webkit-linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(0,0,0,1) 100%);
+			background: linear-gradient(to bottom, rgba(0,0,0,.3) 0%,rgba(0,0,0,1) 100%);
+		}
+	}
+	&_article &__header {
+		height: 650px;
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			height: 1px;
+			width: 100%;
+			background-color: @c-black;
+			margin-top: 7px;
+		}
+	}
+	&_article &__inner {
+		margin-top: 133px + @indent-small;
+	}
+	&_article &__info {
+		position: static;
+		font-size: @fz-large;
+
+		&,
+		* {
+			font-weight: @fw-light;
+		}
+	}
+	&_article &__title {
+		position: static;
+		font-size: @h1-fz;
+		margin-bottom: @h1-mb;
+		margin-right: 30%;
+	}
+	&_article &__body {
+		margin-top: @indent-large;
+	}
+	&_article &__label {
+		font-size: @fz-large;
+		font-weight: @fw-light;
+		margin-bottom: @indent-very-small * 1.2;
+	}
+	&_article &__date {
+		font-size: @h2-fz * 1.1;
+	}
+	&_article &__time {
+		font-size: @fz-very-large * 1.2;
+	}
+}

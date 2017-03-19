@@ -1,42 +1,51 @@
 /* tools ***********************/
 .td {
-    &-none {
-        text-decoration: none;
-    }
-    &-underline {
-        text-decoration: underline;
-    }
+	&-none {
+		text-decoration: none;
+	}
+	&-underline {
+		text-decoration: underline;
+	}
 }
 
 .fw {
-    &-normal {
-        font-weight: normal;
-    }
-    &-bold {
-        font-weight: bold;
-    }
+	&-normal {
+		font-weight: @fw-regular;
+	}
+	&-bold {
+		font-weight: @fw-bold;
+	}
 }
 
 .fs {
-    &-normal {
-        font-style: normal;
-    }
-    &-italic {
-        font-style: italic;
-    }
+	&-normal {
+		font-style: normal;
+	}
+	&-italic {
+		font-style: italic;
+	}
 }
 
 .d {
-    &-block {
-        display: block;
-    }
-    &-none {
-        display: none;
-    }
-    &-inline {
-        display: inline;
-    }
-    &-inline-block {
-        display: inline-block;
-    }
+	&-block {
+		display: block;
+	}
+	&-none {
+		display: none;
+	}
+	&-inline {
+		display: inline;
+	}
+	&-inline-block {
+		display: inline-block;
+	}
+}
+
+.pull {
+	&-right {
+		float: right;
+	}
+	&-left {
+		float: left;
+	}
 }

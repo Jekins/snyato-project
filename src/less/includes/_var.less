@@ -11,112 +11,107 @@
 @c-blue: #2196F3;
 @c-blue-dark: darken(@c-blue, 15%);
 @c-blue-light: lighten(@c-blue, 15%);
-@c-orange: #FF9800;
+@c-orange: #ff5722;
 @c-orange-dark: darken(@c-orange, 15%);
 @c-orange-light: lighten(@c-orange, 15%);
-@c-gray: #9E9E9E;
+@c-gray: #777777;
 @c-gray-light: lighten(@c-gray, 15%);
-@c-gray-lighten: lighten(@c-gray, 25%);
+@c-gray-lighten: #eaeaea;
 @c-gray-dark: darken(@c-gray, 15%);
 @c-gray-darken: darken(@c-gray, 25%);
 
-
-@c-base: @c-dark;
-@c-link: @c-blue;
+@c-base: @c-black;
+@c-link: @c-black;
 @c-danger: @c-red;
 @c-success: @c-green;
 @c-warning: @c-orange;
-@c-primary: @c-blue;
+@c-primary: @c-orange;
+@c-secondary: @c-gray;
 @c-border: @c-gray-lighten;
 
+@indent-base: 44px;
+@indent-large: ceil(@indent-base * 1.6);
+@indent-very-large: ceil(@indent-large * 1.6);
+@indent-small: ceil(@indent-base / 2);
+@indent-very-small:ceil( @indent-small / 2);
 
-@block-base: 20px;
-@block-large: @block-base * 2;
-@block-very-large: @block-large * 2;
-@block-small: @block-base / 2;
-@block-very-small: @block-small / 2;
+@lh-base: 1.7;
+@lh-small: @lh-base - .2;
+@lh-very-small: @lh-small - .2;
+@lh-large: @lh-base + .2;
+@lh-very-large: @lh-large + .2;
 
+@fz-base: 16px;
+@fz-small: @fz-base - 2;
+@fz-very-small: @fz-small - 2;
+@fz-large: @fz-base + 2;
+@fz-very-large: @fz-large + 2;
 
-@lh-base : 1.5;
-@lh-small : @lh-base - .2;
-@lh-very-small : @lh-small - .2;
-@lh-large : @lh-base + .2;
-@lh-very-large : @lh-large + .2;
+@fw-light: 300;
+@fw-regular: 400;
+@fw-medium: 600;
+@fw-bold: 700;
+@fw-extra: 800;
 
-
-@fz-base : 16px;
-@fz-small : @fz-base - 2;
-@fz-very-small : @fz-small - 2;
-@fz-large : @fz-base + 2;
-@fz-very-large : @fz-large + 2;
-
-
-@h1-fz: 36px;
-@h2-fz: 30px;
-@h3-fz: 24px;
+@h1-fz: 56px;
+@h2-fz: 28px;
+@h3-fz: 21px;
 @h4-fz: 18px;
-@h5-fz: 14px;
-@h6-fz: 12px;
+@h5-fz: 16px;
+@h6-fz: 14px;
 
+@h1-mb: @indent-large;
+@h2-mb: @indent-base - @indent-very-small;
+@h3-mb: @indent-small;
+@h4-mb: @indent-small;
+@h5-mb: @indent-small;
+@h6-mb: @indent-small;
 
-@h1-mb: @block-base;
-@h2-mb: @block-base;
-@h3-mb: @block-base;
-@h4-mb: @block-small;
-@h5-mb: @block-small;
-@h6-mb: @block-small;
+@ff-base: 'Open Sans', Arial, sans-serif;
 
-
-@ff-base: Arial, sans-serif;
-
-
-@radius-base: 6px;
+@radius-base: 4px;
 @radius-large: @radius-base + 2;
 @radius-very-large: @radius-large + 2;
 @radius-small: @radius-base - 2;
 @radius-very-small: @radius-small - 2;
-
 
 @body-bg: @c-white;
 @body-ff: @ff-base;
 @body-c: @c-base;
 @body-fz: @fz-base;
 @body-lh: @lh-base;
+@body-fw: @fw-regular;
 @body-mw: 320px;
 
-
 @link-c: @c-link;
-@link-hover-c: darken(@c-link, 15%);
+@link-hover-c: @c-primary;
 
-
-@heading-ff: Arial, sans-serif;
+@heading-ff: @ff-base;
 @heading-c: @c-base;
-@heading-fw: bold;
+@heading-fw: @fw-bold;
 @heading-lh: 1.2;
 
-
-@ib-height: 40px;
-
+@ib-height: 46px;
 
 @input-h: @ib-height;
 @input-p: (@ib-height / 2 - @fz-base / 2) (@ib-height / 1.5 - @fz-base / 1.5);
 @input-fz: @fz-base;
 @input-c: @c-base;
 @input-bg: @c-white;
-@input-border: 1px solid @c-border;
-@input-border-hover: @c-link;
-@input-placeholder-c: lighten(@input-c, 48%);
+@input-border: 1px solid @c-black;
+@input-border-hover: @c-primary;
+@input-placeholder-c: @c-secondary;
 @input-error-c: @c-danger;
-@input-radius: @radius-base;
-
+@input-radius: 0;
 
 @hr-c: @c-border;
 
+@img-path: '../img/';
 
-@cont-padding: 20px;
+@cont-padding: @indent-small;
 
-
+@screen-vlg: 1364px;
 @screen-lg: 1200px;
 @screen-md: 992px;
-@screen-sm: 767px;
+@screen-sm: 768px;
 @screen-xs: 500px;

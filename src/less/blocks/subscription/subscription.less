@@ -1,0 +1,44 @@
+/* subscription ***********************/
+.subscription {
+	&__form {
+		position: relative;
+	}
+	&__input {
+		padding-right: 50px !important;
+	}
+	&__btn {
+		position: absolute;
+		.btn-reset;
+		height: @ib-height;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		padding-left: @indent-very-small;
+		padding-right: @indent-very-small;
+	}
+	&__icon {
+		font-size: 30px;
+		line-height: 1;
+		.animate;
+		
+		&:hover {
+			color: @c-primary;
+		}
+	}
+
+	//mods
+	&_simple &__input {
+		background-color: transparent;
+		padding-top: 5px;
+		padding-left: 0;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-color: transparent;
+		color: @c-white;
+	}
+	&_simple &__icon {
+		font-size: 24px;
+		height: 38px;
+	}
+}

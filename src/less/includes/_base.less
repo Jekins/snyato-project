@@ -1,29 +1,40 @@
 /* base ************************/
+html {
+	font-family: sans-serif;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
 html,
-body { height:100%; }
 body {
-    background-color: @body-bg;
-    font-family: @body-ff;
-    color: @body-c;
-    font-size: @body-fz;
-    line-height: @body-lh;
-    min-width: @body-mw;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	height: 100%;
+}
+
+body {
+	background-color: @body-bg;
+	font-family: @body-ff;
+	font-weight: @body-fw;
+	color: @body-c;
+	font-size: @body-fz;
+	line-height: @body-lh;
+	min-width: @body-mw;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 a {
-    color: @link-c;
-    text-decoration: underline;
+	color: @link-c;
+	text-decoration: underline;
+	.animate;
+;
 
-    &:hover {
-        color: @link-hover-c;
-        text-decoration: none;
-    }
+	&:hover {
+		color: @link-hover-c;
+		text-decoration: none;
+	}
 
-    &:focus {
-        text-decoration: underline;
-    }
+	&:focus {
+		text-decoration: underline;
+	}
 }
 
 a,
@@ -32,108 +43,112 @@ a:focus,
 button,
 button:hover,
 button:focus,
-input { outline: none !important; }
+input,
+input:focus {
+	outline: none !important;
+}
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-    margin-top: 0;
-    font-weight: @heading-fw;
-    font-family: @heading-ff;
-    line-height: @heading-lh;
-    color: @heading-c;
+	margin-top: 0;
+	font-weight: @heading-fw;
+	font-family: @heading-ff;
+	line-height: @heading-lh;
+	color: @heading-c;
 }
+
 h1, .h1 {
-    font-size: @h1-fz; 
-    margin-bottom: @h1-mb;
+	font-size: @h1-fz;
+	margin-bottom: @h1-mb;
+	font-weight: @fw-extra;
 }
+
 h2, .h2 {
-    font-size: @h2-fz; 
-    margin-bottom: @h2-mb;
+	font-size: @h2-fz;
+	margin-bottom: @h2-mb;
 }
+
 h3, .h3 {
-    font-size: @h3-fz; 
-    margin-bottom: @h3-mb;
+	font-size: @h3-fz;
+	margin-bottom: @h3-mb;
 }
+
 h4, .h4 {
-    font-size: @h4-fz; 
-    margin-bottom: @h4-mb;
+	font-size: @h4-fz;
+	margin-bottom: @h4-mb;
 }
+
 h5, .h5 {
-    font-size: @h5-fz; 
-    margin-bottom: @h5-mb;
+	font-size: @h5-fz;
+	margin-bottom: @h5-mb;
 }
+
 h6, .h6 {
-    font-size: @h6-fz; 
-    margin-bottom: @h6-mb;
+	font-size: @h6-fz;
+	margin-bottom: @h6-mb;
 }
 
 b, strong {
-    font-weight: bold;
+	font-weight: @fw-bold;
 }
 
 i {
-    font-style: italic;
+	font-style: italic;
 }
 
 small {
-    font-size: @fz-small;
+	font-size: @fz-small;
 }
 
 ul {
-    list-style: square outside;
-    margin-bottom: @block-base;
-    padding-left: @block-base;
-
-    li {
-        margin-bottom: @block-small;
-
-        &:last-child { margin-bottom: 0; }
-    }
+	list-style: none;
+	margin-bottom: 0;
+	padding-left: 0;
 }
 
 iframe {
-    border: none;
-    width: 100%;
-    display: block;
+	border: none;
+	width: 100%;
+	display: block;
 }
 
 img {
-    max-width: 100%;
-    display: block;
-    line-height: none;
+	max-width: 100%;
+	display: block;
+	line-height: 0;
 }
 
 p {
-    margin-bottom: @block-base;
+	margin-bottom: @indent-base;
 }
 
 hr {
-    margin-top: @block-base;
-    margin-bottom: @block-base;
-    border-top: 1px solid @hr-c;
+	margin-top: @indent-base;
+	margin-bottom: @indent-base;
+	border-top: 1px solid @hr-c;
 }
 
 label {
-    font-weight: normal;
+	font-weight: @fw-regular;
 }
 
 form {
-    @media (max-width: @screen-sm) {
-        table,
-        tbody,
-        thead,
-        tr,
-        td,
-        th {
-            display: block;
-            width: auto;
+	@media (max-width: @screen-sm) {
+		table,
+		tbody,
+		thead,
+		tr,
+		td,
+		th {
+			display: block;
+			width: auto;
 
-            input,
-            textarea,
-            select {
-                width: 100% !important;
-            }
-        }
-    }
+			input,
+			textarea,
+			select {
+				width: 100% !important;
+			}
+		}
+	}
 }
 
 input[type="text"],
@@ -142,38 +157,39 @@ input[type="password"],
 input[type="number"],
 textarea,
 select {
-    display : block;
-    width : 100%;
-    height : @input-h;
-    padding : @input-p;
-    font-size : @input-fz;
-    line-height : 1;
-    color : @input-c;
-    background-color : @input-bg;
-    border : @input-border;
-    transition : all ease-in-out .15s;
-    border-radius : @input-radius;
-    box-shadow : inset 0 0 0 0 transparent;
-    -webkit-appearance: none;
-    .placeholder(@input-placeholder-c);
+	display: block;
+	width: 100%;
+	height: @input-h;
+	padding: @input-p;
+	font-size: @input-fz;
+	line-height: 1;
+	color: @input-c;
+	background-color: @input-bg;
+	border: @input-border;
+	transition: .15s;
+	border-radius: @input-radius;
+	box-shadow: none;
+	-webkit-appearance: none;
+	.placeholder(@input-placeholder-c);
+	.animate;
 
-    &:hover {
-        border-color: @input-border-hover;
-    }
+	&:hover {
+		border-color: @input-border-hover;
+	}
 
-    &:focus {
-        border-color: @input-border-hover;
-    }
+	&:focus {
+		border-color: @input-border-hover;
+	}
 
-    &:active {
-        box-shadow: none;
-    }
+	&:active {
+		box-shadow: none;
+	}
 }
 
 textarea {
-    height : auto;
-    min-height : 150px;
-    padding : @block-base;
+	height: auto;
+	min-height: 150px;
+	padding: @indent-base;
 }
 
 .has-error input[type="text"],
@@ -182,9 +198,9 @@ textarea {
 .has-error input[type="number"],
 .has-error textarea,
 .has-error select {
-    border-color: @input-error-c;
+	border-color: @input-error-c;
 }
 
 .has-error label {
-    color: @input-error-c;
+	color: @input-error-c;
 }

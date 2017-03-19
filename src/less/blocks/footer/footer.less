@@ -1,0 +1,44 @@
+/* footer ***********************/
+.footer {
+	padding-top: @indent-base;
+	padding-bottom: @indent-base;
+	background-color: @c-black;
+
+	&__inner {
+		.cols;
+
+		&,
+		* {
+			color: @c-white;
+		}
+	}
+	&__logo {
+		width: 10%;
+	}
+	&__content {
+		float: right;
+		position: relative;
+	}
+	&__social {
+		position: absolute;
+		right: @cont-padding;
+		bottom: 100%;
+		padding-bottom: 10px
+	}
+	&__nav {
+	}
+	&__copyright {
+		color: @c-secondary;
+		text-align: right;
+		margin-top: @indent-very-small;
+
+		a {
+			text-decoration: none;
+			color: @c-secondary;
+			
+			&:hover {
+				color: @c-primary;
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+/* about-us ***********************/
+.about-us {
+	//var
+	@height-img: 475px;
+
+	position: relative;
+	min-height: @height-img;
+
+	&__img {
+		.bg('about-us-photo.png');
+		background-repeat: no-repeat;
+		//background-size: auto 100%;
+		position: absolute;
+		top: 0;
+		left: 100%;
+		margin-left: -23%;
+		width: 132px;
+		height: @height-img;
+	}
+	&__inner {
+		position: relative;
+		margin-right: 25%;
+		margin-top: -10px;
+	}
+	&__title {
+		font-size: @h2-fz;
+		line-height: @heading-lh;
+		font-weight: @heading-fw;
+	}
+	&__desc {
+		font-size: @fz-small;
+		margin-top: @indent-small;
+	}
+	&__link-more {
+		margin-top: @indent-small;
+	}
+}
