@@ -2,8 +2,21 @@
 .nav {
 	&__list {
 		.cols;
+		@media (max-width: @screen-lg) {
+			margin-left: 0;
+			margin-right: 0;
+		}
 	}
 	&__item {
+		@media (max-width: @screen-lg) {
+			padding-left: 0;
+			padding-right: 0;
+		}
+		@media (max-width: @screen-md) {
+			float: none;
+			text-align: left;
+		}
+
 		> a {
 			display: block;
 			font-size: @fz-large;
@@ -12,6 +25,16 @@
 			line-height: 1;
 			text-decoration: none;
 			color: @c-base;
+			@media (max-width: @screen-vlg) {
+				font-size: @fz-base;
+			}
+			@media (max-width: @screen-md) {
+				border-top: none;
+				border-bottom: 1px solid @c-border;
+				border-right: none;
+				padding-top: @indent-small;
+				padding-bottom: @indent-small;
+			}
 
 			&:hover,
 			&:focus {
@@ -24,6 +47,11 @@
 		&_active {
 			> a {
 				border-color: @c-dark;
+				@media (max-width: @screen-md) {
+					border-left-color: @c-primary;
+					border-bottom-color: @c-border;
+					border-left-width: 3px;
+				}
 
 				&:hover {
 					border-color: @c-primary !important;

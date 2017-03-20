@@ -13,6 +13,9 @@
 		font-size: @h1-fz;
 		line-height: 1;
 		display: block;
+		@media (max-width: @screen-lg) {
+			font-size: @h1-fz / 1.3;
+		}
 	}
 	&__lead {
 		font-size: @fz-base;
@@ -22,6 +25,9 @@
 		margin-top: 5px;
 		display: block;
 		white-space: nowrap;
+		@media (max-width: @screen-lg) {
+			font-size: @fz-very-small;
+		}
 	}
 
 	//mods

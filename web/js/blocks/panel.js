@@ -1,10 +1,10 @@
 define(['jquery', 'helper/bem', 'helper/bg'], function ($, bem) {
-	bem.addBlock('panel');
+	bem.addBlock('header');
 
-	$(bem.getBlock()).css('backgroundColor', 'blue');
-	$(bem.getElem('btn')).css('margin', '20px');
-	$(bem.getElem('hint')).css('color', 'white');
+	// $(bem.getBlock()).css('backgroundColor', 'blue');
+	// $(bem.getElem('btn')).css('margin', '20px');
+	// $(bem.getElem('hint')).css('color', 'white');
 
-	console.log(bem.getBlock());
-	console.log(bem.getElem('hint'));
+	// console.log(bem.getBlock());
+	// console.log(bem.getElem('hint'));
 });

@@ -27,6 +27,13 @@ define(function () {
 								repDMod = splitD[iMod].replace('__', '');
 
 							if (repDMod.indexOf('_') >= 0) {
+								var
+									len = this.block.elem.length,
+									lenMod = this.block.elem[len - 1].mod.length,
+									mod = repDMod.replace(/.*\_/g, '_');
+
+								this.block.elem[len - 1].mod.push({});
+								this.block.elem[len - 1].mod[lenMod][mod.replace('_','')] = mod;
 							} else {
 								var
 									len = this.block.elem.length;
@@ -56,6 +63,7 @@ define(function () {
 					}
 				}
 			}
+			console.log(this.block);
 		},
 		getBlock: function () {
 			var
@@ -76,6 +84,38 @@ define(function () {
 					return '[data-' + b + '~="' + this.block.elem[i][e] + '"]';
 				}
 			}
+		},
+		getMod: function (e) {
+			var
+				elem = this.block.elem,
+				en = '_' + e,
+				i;
+
+			for (i = 0; i < elem.length; i++) {
+				var
+					mod = elem[i].mod,
+					iMod;
+
+				for (iMod = 0; iMod < mod.length; iMod++) {
+					if (mod[iMod][e] == en) {
+
+						var
+							b = Object.keys(this.block)[0],
+							el = Object.keys(this.block.elem[i])[0];
+
+						return '[data-' + b + '~="__' + el + this.block.elem[i].mod[iMod][e] + '"]';
+					}
+				}
+			}
+		},
+		getModClass: function (e) {
+			var
+				mod = this.getMod(e),
+				modRep1 = mod.replace(/.*\~\=\"/g, ''),
+				modRep2 = modRep1.replace(/\"\]/g, ''),
+				modClass = Object.keys(this.block)[0] + modRep2;
+
+			return modClass;
 		},
 		block: {}
 	}

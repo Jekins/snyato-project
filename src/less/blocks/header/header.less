@@ -13,6 +13,9 @@
 
 		> * {
 			padding-right: @indent-large;
+			@media (max-width: @screen-lg) {
+				padding-right: @indent-base;
+			}
 
 			&:last-child {
 				padding-right: 0;
@@ -21,16 +24,54 @@
 	}
 	&__logo {
 		width: 194px + @indent-large;
+		@media (max-width: @screen-lg) {
+			width: 149px + @indent-large;
+		}
 	}
 	&__nav {
 		text-align: center;
+		@media (max-width: @screen-md) {
+			.fixed;
+			z-index: -1;
+			background-color: rgba(0,0,0,.8);
+			.animate;
+			opacity: 0;
+			visibility: hidden;
+		}
 
 		> * {
 			display: inline-block;
+			@media (max-width: @screen-md) {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				height: 100%;
+				overflow-y: auto;
+				background-color: @c-white;
+				width: 280px;
+				.animate;
+				transform: translateX(100%);
+			}
+		}
+
+		//mods
+		&_active {
+			visibility: visible;
+			z-index: 1000;
+			opacity: 1;
+
+			> * {
+				transform: translateX(0);
+			}
 		}
 	}
 	&__search {
 		width: 35px;
+		@media (max-width: @screen-md) {
+			float: right;
+			margin-top: @indent-very-small;
+		}
 
 		&-opener {
 			display: block;
@@ -43,6 +84,25 @@
 		&-icon {
 			font-size: 35px;
 			.animate;
+		}
+	}
+	&__bars {
+		.btn-reset;
+		width: 35px;
+		float: right;
+		margin-left: @indent-small;
+		margin-top: @indent-very-small;
+		@media (min-width: @screen-md) {
+			display: none;
+		}
+
+		&-icon {
+			font-size: 35px;
+			.animate;
+
+			&:hover {
+				color: @c-primary !important;
+			}
 		}
 	}
 

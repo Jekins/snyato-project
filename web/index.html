@@ -20,7 +20,7 @@
 <div class="wrapper">
 
 	<!--header-->
-	<header class="header" id="header">
+	<header class="header" id="header" data-header="on">
 		<div class="container">
 			<div class="header__inner">
 				<div class="header__logo">
@@ -33,7 +33,7 @@
 					<!--/logo-->
 
 				</div>
-				<div class="header__nav">
+				<div class="header__nav" data-header="__nav __nav_active">
 
 					<!--nav-->
 					<nav class="nav">
@@ -58,6 +58,9 @@
 					<!--/nav-->
 
 				</div>
+				<button type="button" class="header__bars" data-header="__bars">
+					<i class="header__bars-icon material-icons">&#xE5D2;</i>
+				</button>
 				<div class="header__search">
 					<button type="button" class="header__search-opener" data-toggle="modal" data-target="#modal-search">
 						<i class="header__search-icon material-icons">&#xE8B6;</i>

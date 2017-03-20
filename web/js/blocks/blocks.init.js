@@ -1,5 +1,5 @@
 define([
-		'./panel',
+		'./header',
 		'./modal',
 	], function() {
 	}
