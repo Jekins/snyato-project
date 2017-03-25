@@ -122,9 +122,15 @@
 	}
 	&:before {
 		transform: translateY(-@indent-very-small + 4) translateX(-@indent-very-small + 4);
+		@media (max-width: @screen-xs) {
+			transform: translateY(-@indent-very-small + 4) translateX(0);
+		}
 	}
 	&:after {
 		transform: translateY(@indent-very-small - 4) translateX(@indent-very-small - 4);
+		@media (max-width: @screen-xs) {
+			transform: translateY(@indent-very-small - 4) translateX(0);
+		}
 	}
 }
 

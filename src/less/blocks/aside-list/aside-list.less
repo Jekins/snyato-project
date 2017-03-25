@@ -1,7 +1,9 @@
 /* aside-list ***********************/
 .aside-list {
 	.last;
-	padding-left: @indent-base;
+	@media (min-width: @screen-lg) {
+		padding-left: @indent-base;
+	}
 
 	&__item {
 		margin-bottom: @indent-large;

@@ -2,6 +2,12 @@
 .body {
 	padding-top: @indent-base;
 	padding-bottom: @indent-large;
+	@media (max-width: @screen-lg) {
+		padding-top: @indent-small;
+	}
+	@media (max-width: @screen-md) {
+		padding-top: 0;
+	}
 
 	&_article {
 		padding-top: 0;

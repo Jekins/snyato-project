@@ -10,10 +10,16 @@
 		font-weight: @fw-bold;
 		font-size: 50px;
 		line-height: 1;
+		@media (max-width: @screen-lg) {
+			font-size: 38px;
+		}
 	}
 	&__month {
 		text-transform: uppercase;
 		font-size: @fz-very-small;
+		@media (max-width: @screen-lg) {
+			font-size: 9px;
+		}
 	}
 	&__inner {}
 	&__title {

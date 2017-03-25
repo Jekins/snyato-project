@@ -19,6 +19,10 @@ body {
 	min-width: @body-mw;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+	@media (max-width: @screen-xs) {
+		font-size: @body-fz - 1;
+	}
 }
 
 a {
@@ -60,21 +64,33 @@ h1, .h1 {
 	font-size: @h1-fz;
 	margin-bottom: @h1-mb;
 	font-weight: @fw-extra;
+	@media (max-width: @screen-lg) {
+		font-size: @h1-fz / 1.2;
+	}
 }
 
 h2, .h2 {
 	font-size: @h2-fz;
 	margin-bottom: @h2-mb;
+	@media (max-width: @screen-lg) {
+		font-size: @h2-fz / 1.2;
+	}
 }
 
 h3, .h3 {
 	font-size: @h3-fz;
 	margin-bottom: @h3-mb;
+	@media (max-width: @screen-lg) {
+		font-size: @h3-fz / 1.2;
+	}
 }
 
 h4, .h4 {
 	font-size: @h4-fz;
 	margin-bottom: @h4-mb;
+	@media (max-width: @screen-lg) {
+		font-size: @h4-fz / 1.2;
+	}
 }
 
 h5, .h5 {
@@ -172,6 +188,11 @@ select {
 	-webkit-appearance: none;
 	.placeholder(@input-placeholder-c);
 	.animate;
+	@media (max-width: @screen-sm) {
+		font-size: @fz-small;
+		padding-left: @indent-small - @indent-very-small;
+		padding-right: @indent-small - @indent-very-small;
+	}
 
 	&:hover {
 		border-color: @input-border-hover;

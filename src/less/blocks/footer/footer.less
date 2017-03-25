@@ -3,6 +3,10 @@
 	padding-top: @indent-base;
 	padding-bottom: @indent-base;
 	background-color: @c-black;
+	@media (max-width: @screen-md) {
+		padding-top: @indent-small;
+		padding-bottom: @indent-small;
+	}
 
 	&__inner {
 		.cols;
@@ -14,16 +18,35 @@
 	}
 	&__logo {
 		width: 10%;
+		float: left;
+		@media (max-width: @screen-sm) {
+			float: none;
+			width: 100%;
+		}
 	}
 	&__content {
 		float: right;
 		position: relative;
+		@media (max-width: @screen-sm) {
+			float: none;
+			margin-top: @indent-small;
+			width: 100%;
+		}
 	}
 	&__social {
 		position: absolute;
 		right: @cont-padding;
 		bottom: 100%;
-		padding-bottom: 10px
+		padding-bottom: 10px;
+		@media (max-width: @screen-md) {
+			padding-bottom: 0;
+			margin-bottom: -10px;
+		}
+		@media (max-width: @screen-sm) {
+			position: static;
+			margin-top: @indent-small;
+			margin-bottom: 0;
+		}
 	}
 	&__nav {
 		@media (max-width: @screen-md) {
@@ -34,6 +57,13 @@
 		color: @c-secondary;
 		text-align: right;
 		margin-top: @indent-very-small;
+		@media (max-width: @screen-md) {
+			margin-top: @indent-small;
+		}
+		@media (max-width: @screen-sm) {
+			text-align: left;
+			font-size: @fz-small;
+		}
 
 		a {
 			text-decoration: none;

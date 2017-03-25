@@ -24,6 +24,10 @@
 			color: @c-white;
 			background-color: @c-black;
 			.animate;
+			@media (max-width: @screen-sm) {
+				width: @btn-wh - 10;
+				height: @btn-wh - 10;
+			}
 
 			&:hover {
 				background-color: @c-primary;

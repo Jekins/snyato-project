@@ -28,12 +28,17 @@
 			@media (max-width: @screen-vlg) {
 				font-size: @fz-base;
 			}
+			@media (max-width: @screen-lg) {
+				padding-left: @indent-small;
+				padding-right: @indent-small;
+			}
 			@media (max-width: @screen-md) {
-				border-top: none;
-				border-bottom: 1px solid @c-border;
-				border-right: none;
+				font-size: @fz-large;
+				border: none;
+				font-weight: bold;
 				padding-top: @indent-small;
 				padding-bottom: @indent-small;
+				padding-left: @indent-small;
 			}
 
 			&:hover,
@@ -48,9 +53,7 @@
 			> a {
 				border-color: @c-dark;
 				@media (max-width: @screen-md) {
-					border-left-color: @c-primary;
-					border-bottom-color: @c-border;
-					border-left-width: 3px;
+					color: @c-primary !important;
 				}
 
 				&:hover {

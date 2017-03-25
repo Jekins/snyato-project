@@ -12,6 +12,12 @@
 		}
 		&_4 {
 			width: 33.3333333%;
+			@media (max-width: @screen-lg) {
+				width: 50%;
+			}
+			@media (max-width: @screen-xs) {
+				width: 100%;
+			}
 		}
 	}
 
@@ -27,5 +33,25 @@
 		padding-right: @cont-padding;
 		padding-top: @cont-padding * 2;
 		margin-bottom: 0;
+	}
+
+	&_preview &__item_3 {
+		@media (max-width: @screen-lg) {
+			width: 33.33333%;
+
+			&:nth-child(4) {
+				display: none;
+			}
+		}
+		@media (max-width: @screen-lg) {
+			width: 50%;
+
+			&:nth-child(4) {
+				display: block;
+			}
+		}
+		@media (max-width: @screen-xs) {
+			width: 100%;
+		}
 	}
 }

@@ -20,7 +20,7 @@
 <div class="wrapper">
 
 	<!--header-->
-	<header class="header header_article" id="header">
+	<header class="header header_article" id="header" data-header="on">
 		<div class="container">
 			<div class="header__inner">
 				<div class="header__logo">
@@ -33,7 +33,7 @@
 					<!--/logo-->
 
 				</div>
-				<div class="header__nav">
+				<div class="header__nav" data-header="__nav __nav_active">
 
 					<!--nav-->
 					<nav class="nav nav_white">
@@ -58,6 +58,9 @@
 					<!--/nav-->
 
 				</div>
+				<button type="button" class="header__bars header__bars_white" data-header="__bars">
+					<i class="header__bars-icon material-icons">&#xE5D2;</i>
+				</button>
 				<div class="header__search">
 					<button type="button" class="header__search-opener" data-toggle="modal" data-target="#modal-search">
 						<i class="header__search-icon material-icons">&#xE8B6;</i>
@@ -105,7 +108,7 @@
 									<div class="article-preview__label">Записаться:</div>
 
 									<!--subscription-->
-									<div class="subscription subscription_simple">
+									<div class="subscription subscription_simple" style="max-width: 260px;">
 										<form class="subscription__form">
 											<input type="text" class="subscription__input" placeholder="Введите сюда email...">
 											<button class="subscription__btn" title="Записаться">
@@ -211,7 +214,7 @@
 
 							<!--aside-list-->
 							<div class="aside-list">
-								<div class="aside-list__item">
+								<div class="aside-list__item visible-md visible-lg">
 
 									<!--social-btns-->
 									<div class="social-btns social-btns_bordered">
@@ -280,7 +283,7 @@
 				<h2>Интересные материалы</h2>
 
 				<!--articles-list-->
-				<div class="articles-list articles-list_inline">
+				<div class="articles-list articles-list_inline articles-list_preview">
 					<div class="articles-list__item articles-list__item_3">
 
 						<!--article-preview-->

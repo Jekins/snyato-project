@@ -6,6 +6,14 @@
 	&__header {
 		position: relative;
 		height: 425px;
+		@media (max-width: @screen-lg) {
+			height: 350px;
+		}
+		@media (max-width: @screen-xs) {
+			height: 300px;
+			margin-left: -@cont-padding;
+			margin-right: -@cont-padding;
+		}
 
 		&-link {
 			.absolute;
@@ -33,8 +41,10 @@
 	}
 	&__img {
 		.bg-img;
-		margin-left: -@cont-padding;
-		margin-right: -@cont-padding;
+		@media (min-width: @screen-lg) {
+			margin-left: -@cont-padding;
+			margin-right: -@cont-padding;
+		}
 
 		&-inner {
 			&:after {
@@ -42,10 +52,10 @@
 				display: block;
 				.absolute;
 				opacity: .8;
-				background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 26%, rgba(0,0,0,1) 100%);
-				background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,1) 100%);
-				background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 26%,rgba(0,0,0,1) 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=0 );
+				background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 1) 100%);
+				background: -webkit-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 1) 100%);
+				background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 26%, rgba(0, 0, 0, 1) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#000000', endColorstr='#000000', GradientType=0);
 			}
 		}
 	}
@@ -64,10 +74,28 @@
 		left: @header-indent;
 		right: @header-indent;
 		.cols;
+		@media (max-width: @screen-lg) {
+			top: @header-indent;
+		}
+		@media (max-width: @screen-xs) {
+			font-size: @fz-small;
+		}
 
-		&-left {}
+		&-left {
+			@media (max-width: @screen-sm) {
+				li {
+					display: inline !important;
+				}
+			}
+			@media (max-width: @screen-xs) {
+				float: none;
+			}
+		}
 		&-right {
 			float: right;
+			@media (max-width: @screen-xs) {
+				float: none;
+			}
 		}
 		a {
 			text-decoration: none;
@@ -81,6 +109,13 @@
 		font-size: @h1-fz / 1.6;
 		font-weight: @fw-extra;
 		line-height: @heading-lh;
+		@media (max-width: @screen-lg) {
+			bottom: @header-indent;
+			font-size: @h1-fz / 2;
+		}
+		@media (max-width: @screen-xs) {
+			font-size: @h1-fz / 2.4;
+		}
 
 		> * {
 			.h-reset;
@@ -97,10 +132,16 @@
 		article {
 			font-size: @fz-large;
 			line-height: @lh-large;
+			.last;
+			margin-bottom: @indent-base;
 		}
 	}
 	&__desc {
 		.last;
+		@media (max-width: @screen-xs) {
+			max-height: 200px;
+			overflow: hidden;
+		}
 	}
 	&__link-more {
 		margin-top: @indent-very-small;
@@ -127,15 +168,26 @@
 		@x: 2.2;
 
 		.cols;
+		.last;
 		margin-left: -@cont-padding * @x;
 		margin-right: -@cont-padding * @x;
+		@media (max-width: @screen-md) {
+			margin-left: -@cont-padding;
+			margin-right: -@cont-padding;
+		}
 
 		&-item {
 			padding-left: @cont-padding * @x;
 			padding-right: @cont-padding * @x;
-			//background-color: rgba(0,0,0,.3);
-			//padding-top: @cont-padding * @x / 2;
-			//padding-bottom: @cont-padding * @x / 2;
+			@media (max-width: @screen-md) {
+				padding-left: @cont-padding;
+				padding-right: @cont-padding;
+			}
+			@media (max-width: @screen-sm) {
+				float: none;
+				width: 100%;
+				margin-bottom: @indent-very-small;
+			}
 		}
 		&-inner {
 			.cols;
@@ -149,10 +201,24 @@
 		}
 	}
 
-
 	//mods
 	&_video &__header {
 		height: 170px;
+	}
+	&_video &__info-right {
+		padding-left: @cont-padding / 2;
+		@media (max-width: @screen-vlg) {
+			font-size: @fz-small;
+		}
+		@media (max-width: @screen-xs) {
+			float: right;
+		}
+	}
+	&_video &__info-left {
+		padding-right: @cont-padding / 2;
+		@media (max-width: @screen-xs) {
+			float: left;
+		}
 	}
 	&_video &__img {
 		margin-left: auto;
@@ -160,10 +226,10 @@
 	}
 	&_video &__img-inner {
 		&:after {
-			background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 35%, rgba(0,0,0,1) 100%);
-			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,1) 100%);
-			background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 35%,rgba(0,0,0,1) 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+			background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 1) 100%);
+			background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 1) 100%);
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 35%, rgba(0, 0, 0, 1) 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#000000', GradientType=0);
 		}
 	}
 	&_video &__info {
@@ -179,11 +245,17 @@
 		right: auto;
 		font-size: @h3-fz;
 		line-height: 1;
+		@media (max-width: @screen-lg) {
+			font-size: @h3-fz / 1.2;
+		}
 	}
 	&_video &__body {
 		margin-top: @indent-small;
 		height: 88px;
 		overflow: hidden;
+		@media (max-width: @screen-xs) {
+			height: auto;
+		}
 	}
 	&_video &__desc {
 		color: @c-secondary;
@@ -204,9 +276,10 @@
 		&:after {
 			background-color: @c-black;
 			transform: skewX(-20deg);
-			right: 44%;
-			left: -44%;
+			right: auto;
+			left: -50px;
 			opacity: .7;
+			width: 205px;
 		}
 	}
 	&_event &__info {
@@ -232,6 +305,9 @@
 		margin-top: @indent-small;
 		height: 124px;
 		overflow: hidden;
+		@media (max-width: @screen-xs) {
+			height: auto;
+		}
 	}
 	&_event &__desc {
 		color: @c-secondary;
@@ -239,6 +315,12 @@
 		margin-top: @indent-very-small;
 	}
 
+	&_article &__header {
+		@media (max-width: @screen-xs) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
 	&_article &__img {
 		margin-left: auto;
 		margin-right: auto;
@@ -250,13 +332,16 @@
 	}
 	&_article &__img-inner {
 		&:after {
-			background: -moz-linear-gradient(top, rgba(0,0,0,.3) 0%, rgba(0,0,0,1) 100%);
-			background: -webkit-linear-gradient(top, rgba(0,0,0,.3) 0%,rgba(0,0,0,1) 100%);
-			background: linear-gradient(to bottom, rgba(0,0,0,.3) 0%,rgba(0,0,0,1) 100%);
+			background: -moz-linear-gradient(top, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, 1) 100%);
+			background: -webkit-linear-gradient(top, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, 1) 100%);
+			background: linear-gradient(to bottom, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, 1) 100%);
 		}
 	}
 	&_article &__header {
 		height: 650px;
+		@media (max-width: @screen-sm) {
+			height: 580px;
+		}
 
 		&:after {
 			content: '';
@@ -277,6 +362,12 @@
 	&_article &__info {
 		position: static;
 		font-size: @fz-large;
+		@media (max-width: @screen-sm) {
+			font-size: @fz-base;
+		}
+		@media (max-width: @screen-xs) {
+			font-size: @fz-small;
+		}
 
 		&,
 		* {
@@ -288,19 +379,72 @@
 		font-size: @h1-fz;
 		margin-bottom: @h1-mb;
 		margin-right: 30%;
+		@media (max-width: @screen-vlg) {
+			font-size: @h1-fz / 1.1;
+		}
+		@media (max-width: @screen-lg) {
+			margin-right: 0;
+		}
+		@media (max-width: @screen-md) {
+			font-size: @h1-fz / 1.2;
+		}
+		@media (max-width: @screen-sm) {
+			font-size: @h1-fz / 1.4;
+			margin-bottom: @h1-mb / 1.5;
+		}
+		@media (max-width: @screen-xs) {
+			margin-bottom: @h1-mb / 2;
+			font-size: @h1-fz / 2;
+		}
+		@media (max-width: 320px) {
+			font-size: @h1-fz / 2.2;
+		}
 	}
 	&_article &__body {
 		margin-top: @indent-large;
+		@media (max-width: @screen-sm) {
+			margin-top: @indent-base;
+		}
+
+		article {
+			@media (max-width: @screen-sm) {
+				font-size: @fz-base;
+			}
+		}
+	}
+	&_article &__options-inner {
+		@media (max-width: @screen-sm) {
+			display: inline-block;
+		}
 	}
 	&_article &__label {
 		font-size: @fz-large;
 		font-weight: @fw-light;
 		margin-bottom: @indent-very-small * 1.2;
+		@media (max-width: @screen-md) {
+			font-size: @fz-small;
+		}
+		@media (max-width: @screen-sm) {
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: @indent-very-small;
+		}
 	}
 	&_article &__date {
 		font-size: @h2-fz * 1.1;
+		@media (max-width: @screen-md) {
+			font-size: @h3-fz;
+			padding-right: @cont-padding / 4;
+		}
+		@media (max-width: 320px) {
+			font-size: @h4-fz;
+		}
 	}
 	&_article &__time {
 		font-size: @fz-very-large * 1.2;
+		@media (max-width: @screen-md) {
+			font-size: @fz-base;
+			padding-left: @cont-padding / 4;
+		}
 	}
 }

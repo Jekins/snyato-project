@@ -16,14 +16,13 @@ define(['jquery', 'helper/bem'], function ($, bem) {
 
 	$(document).on('click', bars, function () {
 		obj.openNav();
+
+		return false;
 	});
-	$(document).click(function (e) {
-		if ($(nav).hasClass(navActiveClass)) {
-			console.log($(navActiveClass));
-			if ($(e.target).closest(nav).length) return;
-			obj.closeNav();
-			e.stopPropagation();
-		}
+	$(document).on('click', function (e) {
+		if ($(e.target).parent(nav).length) return;
+		obj.closeNav();
+		e.stopPropagation();
 	});
 
 	return obj;

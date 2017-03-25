@@ -5,27 +5,60 @@
 
 	position: relative;
 	min-height: @height-img;
+	@media (max-width: @screen-lg) {
+		min-height: @height-img / 1.2;
+	}
+	@media (max-width: @screen-md) {
+		min-height: 100%;
+		overflow: hidden;
+	}
 
 	&__img {
 		.bg('about-us-photo.png');
 		background-repeat: no-repeat;
-		//background-size: auto 100%;
 		position: absolute;
 		top: 0;
 		left: 100%;
 		margin-left: -23%;
 		width: 132px;
 		height: @height-img;
+		@media (max-width: @screen-vlg) {
+			margin-left: 0;
+		}
+		@media (max-width: @screen-lg) {
+			height: @height-img / 1.2;
+			background-size: auto 100%;
+		}
+		@media (max-width: @screen-md) {
+			left: auto;
+			right: 0;
+		}
+		@media (max-width: @screen-xs) {
+			display: none;
+		}
 	}
 	&__inner {
 		position: relative;
 		margin-right: 25%;
 		margin-top: -10px;
+		@media (max-width: @screen-vlg) {
+			margin-right: @indent-very-small;
+		}
+		@media (max-width: @screen-md) {
+			margin-right: 132px + @indent-base;
+			margin-top: 0;
+		}
+		@media (max-width: @screen-xs) {
+			margin-right: 0;
+		}
 	}
 	&__title {
 		font-size: @h2-fz;
 		line-height: @heading-lh;
 		font-weight: @heading-fw;
+		@media (max-width: @screen-lg) {
+			font-size: @h2-fz / 1.2;
+		}
 	}
 	&__desc {
 		font-size: @fz-small;
